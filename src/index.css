@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A; /* Pure Black Background */
+  color: #F5F5F5; /* Off-white Text */
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Mouse cursor volumetric spotlight glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(212, 175, 55, 0.05),
+    transparent 80%
+  );
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Heading Typography */
+h1, h2, h3, h4, h5, h6, .font-poppins {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1C1C1C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37; /* Metallic Gold */
+}
+
+/* Scroll Offset for Navigation Padding */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Utility Gradients & Glows */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-orange-gold {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 60%, #E5A93B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg-gold {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(255, 215, 0, 0.03) 100%);
+}
+
+.gradient-bg-dark-gold {
+  background: linear-gradient(135deg, rgba(58, 47, 11, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+}
+
+/* Premium Corporate Cards - Gold/Black Theme */
+.glass-card {
+  background: #121212; /* Charcoal black card background */
+  border: 1px solid #3A2F0B; /* Bronze/dark gold border */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.45); /* Gold highlight */
+  box-shadow: 0 15px 35px -5px rgba(212, 175, 55, 0.15), 0 0 15px rgba(212, 175, 55, 0.08); /* Gold glow */
+}
+
+/* Glassmorphism Panel Style */
+.glass-effect {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Timeline Custom Styles */
+.timeline-dot {
+  position: relative;
+}
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #D4AF37;
+  border: 3px solid #0A0A0A;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Star Cursor Spin Animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-star-cursor {
+  display: inline-block;
+  animation: spin-slow 3s linear infinite;
+  transform-origin: center;
+}
+
